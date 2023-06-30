@@ -1,4 +1,4 @@
 # IDANet
 Involuntary Attention-driven Depth Subspace Learning and Adaptive Dual-semantic CAM for Interpretable Grading of Sophisticated Semantic Laryngeal Histopathology Images
 
-We are now working intensively on the manuscript and preparing it for submission to the TMI journal, and we will fully release the code and dataset after the completion of the external review.
+Our manuscript is in the review stage, and we will publish the code and dataset completely when the review is finished. If interested in this research and dataset, contact us at panhuang@cqu.edu.cn.
