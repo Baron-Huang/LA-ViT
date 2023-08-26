@@ -1,8 +1,8 @@
-############################# IDANet & Swin_Transformer_Demo ##############################
+############################# TIA_Trans & Swin_Transformer_Demo ##############################
 #### Author: Dr.Pan Huang
 #### Email: panhuang@cqu.edu.cn
 #### Department: COE, Chongqing University
-#### Attempt: Testing Swin_Transformer & IDANet model
+#### Attempt: Testing Swin_Transformer & TIA_Trans model
 
 ########################## API Section #########################
 import skimage.color
@@ -18,7 +18,7 @@ import random
 from torchsummaryX import summary
 from tensorboardX import SummaryWriter
 from SIL_Model.SwinT_models.models.swin_transformer import SwinTransformer
-from SIL_Model.SwinT_models.models.SwinT_model_modules import SwinT_Net, IDANet, IDANet_Ablation, IDANet_Visulization, \
+from SIL_Model.SwinT_models.models.SwinT_model_modules import SwinT_Net, TIA_Trans,TIA_Trans_Ablation, TIA_Trans_Visulization, \
     creating_swinT
 from SIL_Utils.fit_functions import Single_out_fit, searching_best_lr, testing_funnction, Multiple_out_fit
 from SIL_Utils.ablation_experiments import save_model, acc_scores, to_np_category
@@ -179,24 +179,24 @@ if __name__ == '__main__':
     print(swinT_base.layers[0].blocks[0].mlp.fc2.weight)
 
     ### creating a SwinT model
-    swinT_net = SwinT_Net(base_model=swinT_base, class_num=class_num)
+    #swinT_net = SwinT_Net(base_model=swinT_base, class_num=class_num)
 
-    ### creating a IDANet model for training
-    #swinT_net = IDANet(base_model=swinT_base)
+    ### creating a TIA_Trans model for training
+    tiatrans_net = TIA_Trans(base_model=swinT_base)
 
-    ### creating a IDANet model for visulization
-    #swinT_net = IDANet_Visulization(base_model=swinT_base)
+    ### creating a TIA_Trans model for visulization
+    #tiatrans_net = TIA_Trans_Visulization(base_model=swinT_base)
 
-    ### creating a IDANet model for ablation
-    #swinT_net = IDANet_Ablation(base_model=swinT_base)
+    ### creating a TIA_Trans model for ablation
+    #tiatrans_net = TIA_Trans_Ablation(base_model=swinT_base)
 
     with torch.no_grad():
         print('########################## SwinT_summary #########################')
-        summary(swinT_net, torch.randn((1, 3, 224, 224)))
+        summary(tiatrans_net, torch.randn((1, 3, 224, 224)))
         print('\n', '########################## SwinT_net #########################')
-        print(swinT_net, '\n')
+        print(tiatrans_net, '\n')
 
-    swinT_net = swinT_net.cuda(gpu_device)
+    tiatrans_net = tiatrans_net.cuda(gpu_device)
 
     ########################## fitting models and testing models #########################
     #print('########################## fitting models and testing models #########################')
@@ -204,9 +204,9 @@ if __name__ == '__main__':
     #              lr_fn='vit', epoch = epochs, gpu_device = gpu_device,
     #             weight_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Weights\Larynx_greece\SwinT.pth')
 
-    #Multiple_out_fit(ddai_net=swinT_net, train_loader=train_loader, val_loader=val_loader, test_loader=test_loader,
-    #                epoch=epochs, gpu_device=gpu_device,
-    #                 weight_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Weights\Larynx_greece\IDANet_3060_r_0.pth')
+    Multiple_out_fit(ddai_net=tiatrans_net, train_loader=train_loader, val_loader=val_loader, test_loader=test_loader,
+                    epoch=epochs, gpu_device=gpu_device,
+                     weight_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Weights\Larynx_greece\IDANet_3060_r_0.pth')
 
     ########################## searching the best learning rate #########################
     #print('########################## searching the best learning rate #########################')
