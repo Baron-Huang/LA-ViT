@@ -1,8 +1,8 @@
-############################# TIA_ViT & Swin_Transformer_Demo ##############################
+############################# LA_ViT & Swin_Transformer_Demo ##############################
 #### Author: Dr.Pan Huang
 #### Email: panhuang@cqu.edu.cn
 #### Department: COE, Chongqing University
-#### Attempt: Testing Swin_Transformer & TIA_ViT model
+#### Attempt: Testing Swin_Transformer & LA_ViT model
 
 ########################## API Section #########################
 import skimage.color
@@ -18,7 +18,7 @@ import random
 from torchsummaryX import summary
 from tensorboardX import SummaryWriter
 from SIL_Model.SwinT_models.models.swin_transformer import SwinTransformer
-from SIL_Model.SwinT_models.models.SwinT_model_modules import SwinT_Net, TIA_ViT,TIA_ViT_Ablation, TIA_ViT_Visulization, \
+from SIL_Model.SwinT_models.models.SwinT_model_modules import SwinT_Net, LA_ViT,LA_ViT_Ablation, LA_ViT_Visulization, \
     creating_swinT
 from SIL_Utils.fit_functions import Single_out_fit, searching_best_lr, testing_funnction, Multiple_out_fit
 from SIL_Utils.ablation_experiments import save_model, acc_scores, to_np_category
@@ -181,22 +181,22 @@ if __name__ == '__main__':
     ### creating a SwinT model
     #swinT_net = SwinT_Net(base_model=swinT_base, class_num=class_num)
 
-    ### creating a TIA_ViT model for training
-    tiavit_net = TIA_ViT(base_model=swinT_base)
+    ### creating a LA_ViT model for training
+    lavit_net = LA_ViT(base_model=swinT_base)
 
-    ### creating a TIA_ViT model for visulization
-    #tiavit_net = TIA_ViT_Visulization(base_model=swinT_base)
+    ### creating a LA_ViT model for visulization
+    #lavit_net = LA_ViT_Visulization(base_model=swinT_base)
 
-    ### creating a TIA_ViT model for ablation
-    #tiavit_net = TIA_ViT_Ablation(base_model=swinT_base)
+    ### creating a LA_ViT model for ablation
+    #lavit_net = LA_ViT_Ablation(base_model=swinT_base)
 
     with torch.no_grad():
         print('########################## SwinT_summary #########################')
-        summary(tiavit_net, torch.randn((1, 3, 224, 224)))
+        summary(lavit_net, torch.randn((1, 3, 224, 224)))
         print('\n', '########################## SwinT_net #########################')
-        print(tiavit_net, '\n')
+        print(lavit_net, '\n')
 
-    tiavit_net = tiavit_net.cuda(gpu_device)
+    lavit_net = lavit_net.cuda(gpu_device)
 
     ########################## fitting models and testing models #########################
     #print('########################## fitting models and testing models #########################')
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     #              lr_fn='vit', epoch = epochs, gpu_device = gpu_device,
     #             weight_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Weights\Larynx_greece\SwinT.pth')
 
-    Multiple_out_fit(ddai_net=tiavit_net, train_loader=train_loader, val_loader=val_loader, test_loader=test_loader,
+    Multiple_out_fit(ddai_net=lavit_net, train_loader=train_loader, val_loader=val_loader, test_loader=test_loader,
                     epoch=epochs, gpu_device=gpu_device,
                      weight_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Weights\Larynx_greece\IDANet_3060_r_0.pth')
 
