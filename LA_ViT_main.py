@@ -1,7 +1,7 @@
 ############################# LA_ViT & Swin_Transformer_Demo ##############################
 #### Author: Dr.Pan Huang
-#### Email: panhuang@cqu.edu.cn
-#### Department: COE, Chongqing University
+#### Email: panhuang@cqu.edu.cn or n2308704h@e.ntu.edu.sg
+#### Department: Chongqing University-Nanyang Technological
 #### Attempt: Testing Swin_Transformer & LA_ViT model
 
 ########################## API Section #########################
