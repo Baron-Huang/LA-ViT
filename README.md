@@ -7,6 +7,7 @@ Grading laryngeal squamous cell carcinoma (LSCC) based on histopathological imag
 
 ---
 ![image](https://raw.githubusercontent.com/Baron-Huang/ViT-AMCNet/main/Img/main.jpg)
+Fig.1. Overview of the proposed end-to-end LA-ViT for the pathology grading of LSCC. 
 
 ---
 # Citing LA-ViT
