@@ -13,7 +13,7 @@ Fig.1. Overview of the proposed end-to-end LA-ViT for the pathology grading of L
 
 
 
-![image](https://github.com/Baron-Huang/LA-ViT/blob/main/Images/Fig_2.png)
+![image](https://github.com/Baron-Huang/LA-ViT/blob/main/Images/Fig_2.png)(width="100px")
 Fig.2. There is an overabundance of low-effect background semantics in the feature maps, feature channels, and class activation maps of traditional transformer models (such as the vision transformer (ViT) and Swin transformer (SwinT)). Tumor and bird are target semantics, and tree and lymph are background semantics. 
 
 ---
