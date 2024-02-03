@@ -16,7 +16,7 @@ We manuscript is in peer review stage, waiting a moment.
 # Notice
 1. We fixed the random seeds, and the effect is consistent on different GPUs on the same server, but there may be subtle differences if the server is changed, and such differences are caused by Pytorch's random method, which we cannot solve. 
 2. if you replace other datasets for experiments, the hyperparameters mentioned in the text may not be optimal, please re-optimize them, and most importantly, optimize the learning rate. If you have any doubts, please do not hesitate to contact panhuang@cqu.edu.cn.
-3. The dataset in this paper was requested from the Medical Signal Processing Laboratory of the University of Athens, and we do not have the permission to upload its data, so interested parties can request it from the University of Greece (link in the dataset section of the paper).
+3. Use of our datasets requires a request to be made to co-author Hualiang Xiao by filling out the relevant request form, which can be downloaded after review.
 4. The algorithms and ideas in this paper are for scientific study and research only, and commercial activities are prohibited. If you refer to the improvement methods of the ideas in this paper, please follow the principles of academic norms and cite this paper.
 
 ---
