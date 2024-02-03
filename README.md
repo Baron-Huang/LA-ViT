@@ -11,6 +11,9 @@ Grading laryngeal squamous cell carcinoma (LSCC) based on histopathological imag
 ![image](https://github.com/Baron-Huang/LA-ViT/blob/main/Images/Fig_4.png)
 Fig.1. Overview of the proposed end-to-end LA-ViT for the pathology grading of LSCC. 
 
+![image](https://github.com/Baron-Huang/LA-ViT/blob/main/Images/Fig_4.png)
+Fig.2. There is an overabundance of low-effect background semantics in the feature maps, feature channels, and class activation maps of traditional transformer models (such as the vision transformer (ViT) and Swin transformer (SwinT)). Tumor and bird are target semantics, and tree and lymph are background semantics. 
+
 ---
 # Citing LA-ViT
 We manuscript is in peer review stage, waiting a moment.
