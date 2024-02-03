@@ -1,5 +1,5 @@
 # LA-ViT: A Network with Transformers Constrained by Learned-Parameter-Free Attention for Interpretable Grading in a New Laryngeal Histopathology Image Dataset
-Our manuscript is in the peer review stage (IEEE-JBHI 2024), and we will publish the code and dataset completely when the review is finished. If interested in this research and dataset, contact us at panhuang@cqu.edu.cn.
+Our manuscript is in the peer review stage (IEEE-JBHI 2024), and we will publish the code and dataset completely when the review is finished. If you interested in this research and dataset, contact us at panhuang@cqu.edu.cn or n2308704h@e.ntu.edu.sg.
 
 ***
 # Introduction
@@ -29,7 +29,7 @@ We manuscript is in peer review stage, waiting a moment.
 |scikit-learn|0.24.2|
 |torch|1.9.0+cu111|
 |torchvision|0.10.0+cu111|
-|Python|3.7.9|
+|Python|3.9.0|
 |Cuda|11.1.105|
 
 
