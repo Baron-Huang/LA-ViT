@@ -29,7 +29,7 @@ import PIL
 import seaborn as sns
 from torchvision.transforms import InterpolationMode
 from torchvision.transforms.functional import to_pil_image
-from SIL_Learning.Adaptive_Dual_Semantic_CAM import Adaptive_Dual_Semantic_CAM
+from SIL_Learning.SLA import SLA_CAM
 from SIL_Learning.CAM import CAM
 from SIL_Learning.Grad_CAM import Grad_CAM
 from SIL_Learning.Grad_CAM_Plus2 import Grad_CAM_Plus2
@@ -260,13 +260,13 @@ if __name__ == '__main__':
     result_cam_path = r'E:\SOTA_Model_Interpretable_Learning\SIL_Results\Larynx_greece\SwinT_XGrad_CAM\CAMs\III'
 
     for i in img_name_list:
-        #my_ads_cam = Adaptive_Dual_Semantic_CAM(model = swinT_net, path_name = path_name, img_name = i,
-        #                                        select_cls = 2, inverse_set = True, set_rate_1 = 0.65,
-        #                                        show_all_fp = True, set_rate_2 = 0.65, rd_setting = True,
-        #                                        transform=transform, training_img_path = training_img_path,
-        #                                        ads_cam_model = None, result_img_path = result_img_path,
-        #                                        result_cam_path = result_cam_path, out_mode= 'triplet',
-        #                                        adaptive_strategy = 'histopathology')
+        #my_sla_cam = SLA_CAM(model = swinT_net, path_name = path_name, img_name = i,
+        #                     select_cls = 2, inverse_set = True, set_rate_1 = 0.65,
+        #                     show_all_fp = True, set_rate_2 = 0.65, rd_setting = True,
+        #                     transform=transform, training_img_path = training_img_path,
+        #                     ads_cam_model = None, result_img_path = result_img_path,
+        #                     result_cam_path = result_cam_path, out_mode= 'triplet',
+        #                     adaptive_strategy = 'histopathology')
 
         #my_cam = CAM(model = swinT_net, path_name = path_name, img_name = i, result_cam_path = result_cam_path,
         #          select_cls = 0, inverse_set = True, transform = transform, gpu_device = gpu_device, show_all_fp = True,
